@@ -3,7 +3,7 @@
 Hi :) `QtCvHistogram` class is a simple *class* for calculing normal **`histograms`** & **`cumulative histograms`**
 for both *`RGB or BGR`* images and for *`grayscale`* images, using Qt for displaying the result in **`QPixmap`**.
 
-### Explications :
+### Explanations :
 
 the `QtCvHistogram` class, has two *static* methods
 
@@ -19,7 +19,11 @@ Second method has 4 arguments, **histogram vector**, **size of image**, **color 
 QVector<QPixmap> draw(QVector<cv::Mat> hist, QSize imSize = QSize(512,400), QColor backColor = QColor(255,255,255));
 ```
 
-if `**hist.size() == 0**` this is an error!
+---------------------
+
+if **`hist.size() == 0`** this is an error!
+
+-----------------------
 
 ### Example :
 ```cpp
