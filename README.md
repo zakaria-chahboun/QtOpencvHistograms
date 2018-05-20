@@ -1,6 +1,6 @@
 # QtOpencvHistograms
 
-Hi :) ***`QtCvHistogram`*** is a simple *class* for calculing normal **`histograms`** & **`cumulative histograms`**
+Hi :) ***`QtCvHistogram`*** is a simple *class* for calculate normal **`histograms`** and **`cumulative histograms`**
 
 for both **`RGB or BGR`** images and for **`grayscale`** images,
 
