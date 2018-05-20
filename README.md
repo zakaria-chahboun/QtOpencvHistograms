@@ -1,44 +1,56 @@
 # QtOpencvHistograms
 
-Hi :) `QtCvHistogram` class is a simple *class* for calculing normal **`histograms`** & **`cumulative histograms`**
-for both *`RGB or BGR`* images and for *`grayscale`* images, using Qt for displaying the result in **`QPixmap`**.
+Hi :) ***`QtCvHistogram`*** class is a simple *class* for calculing normal **`histograms`** & **`cumulative histograms`**
+
+for both **`RGB or BGR`** images and for **`grayscale`** images,
+
+using *Qt* for displaying the result in **`QPixmap`**.
 
 ### Explanations :
 
-the `QtCvHistogram` class, has two *static* methods
+the ***`QtCvHistogram`*** class, has two **static** methods
 
-First method has two arguments : **`input mat`** and **`boolean`** for cumulative or normal histogram,
+First method has **two arguments** :
+- input image: ***`cv:Mat`***
+- the histogram cumulative or not: ***`bool`***
+- this function return **`QVector<cv::Mat>`**, this vector has ***3 elements*** for colored images or ***one element*** for gray image:
 
-this function return **`QVector<cv::Mat>`**, this vector has **3 elements** for colored images or **one** for gray image:
 ```cpp
 QVector<cv::Mat> hist =  QtCvHistogram::calculation(cv::Mat input, bool isCumulative = false);
 ```
 
-Second method has 4 arguments, **histogram vector**, **size of image**, **color of background histogram**
+Second method has **three arguments** :
+- **input histogram vector:**
+- **size of output image**
+- **color of background output image**
+
 ```cpp
 QVector<QPixmap> draw(QVector<cv::Mat> hist, QSize imSize = QSize(512,400), QColor backColor = QColor(255,255,255));
 ```
 
 ---------------------
+### Error(s)
 
-if **`hist.size() == 0`** this is an error!
+If you get ***`hist.size() == 0`*** this is an error!
 
 -----------------------
 
 ### Example :
 ```cpp
-	// Load Image
+    // Load Image
     cv::Mat im = cv::imread("image.jpg");
 
     // List or Vector for calculing Histograms
     QVector<cv::Mat> hist =  QtCvHistogram::calculation(im);
+    
+    // List or Vector for drawing Histograms
     QVector<QPixmap> draw = QtCvHistogram::draw(hist,QSize(256,200));
 
-    // grayscale image
+    // if a grayscale image
     if(hist.size() == 1)
     ui->image->setPixmap(draw[0]);
 
-    // colored image
+    // or if a colored image
     if(hist.size() == 3){
         ui->blue->setPixmap(draw[0]);
         ui->green->setPixmap(draw[1]);
