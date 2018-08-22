@@ -71,6 +71,11 @@ static QVector<QPixmap> draw(QVector<cv::Mat> hist, QSize imSize = QSize(512,400
       ui->label_4->setPixmap(draw[3]); // All curves in one image :)
       }
 ```
+###### You can simplify steps using **`auto`** in modern C++
+```Cpp
+    auto calc = QtCvHistogram::calculation(image,true);
+    auto draw = QtCvHistogram::draw(calc);
+```
 
 ### ScreenShots:
 * Colored Image: Cumulative Histogram and Filled
@@ -80,7 +85,7 @@ static QVector<QPixmap> draw(QVector<cv::Mat> hist, QSize imSize = QSize(512,400
 <img src='./Screenshots/not cumul all - not fill.PNG' />
 
 * Grayscale Image:
-<img src='./Screenshots/gray image - full.PNG' />
+<img src='./Screenshots/gray image - full.png' />
 
 * an Other style: Black background!
 <img src='./Screenshots/not cumul all.PNG' />
