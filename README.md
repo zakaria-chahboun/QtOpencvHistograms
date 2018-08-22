@@ -90,7 +90,7 @@ static QVector<QPixmap> draw(QVector<cv::Mat> hist, QSize imSize = QSize(512,400
 ###### 19/05/2018 | 15:11
 ###### 22/08/2018 | 03:35
 
-Tesed on Windows and Manjaro Linux :heart:
+> Tesed on **Windows** and **Manjaro Linux** :heart:
 
 <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/1259px-Twitter_Bird.svg.png" width="20px"> <a href="https://twitter.com/Zaki_Chahboun">@Zaki_Chahboun</a>
 <br>
